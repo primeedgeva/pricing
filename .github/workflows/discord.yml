@@ -1,4 +1,4 @@
-name: Notify Discord
+name: Notify Discord on Push
 
 on:
   push:
@@ -6,12 +6,12 @@ on:
       - main
 
 jobs:
-  discordNotification:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to Discord
         run: |
           curl -H "Content-Type: application/json" \
-          -X POST \
-          -d '{"username":"GitHub Bot","content":"🚀 A new push was made to `main`!"}' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+               -X POST \
+               -d '{"content": "🚀 New push to main branch!"}' \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}

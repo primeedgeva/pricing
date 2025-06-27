@@ -13,5 +13,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
           -X POST \
-          -d "{\"content\": \"🚀 New push to main by ${{ github.actor }}!\"}" \
+          -d "{\"content\": \"🚀 I LIKE TO MOVE IT MOVE IT New push to main by ${{ github.actor }}!\"}" \
           ${{ secrets.DISCORD_WEBHOOK_URL }}

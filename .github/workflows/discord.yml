@@ -36,3 +36,18 @@ jobs:
             ]
           }' \
           ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Send Bookkeeping section
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{
+            "embeds": [
+              {
+                "title": "📚 In-Training VAs: Bookkeeping",
+                "description": "Initial payment: **$349** ($174.50 upfront to begin).\n\n**Weeks 1 & 2:** Free service.\n**Week 3:** $96/week (24hr part-time) or $160/week (40hr full-time), continuing until canceled.\n**Week 4:** Weekly rate + remaining $174.50 initial fee.",
+                "color": 16753920
+              }
+            ]
+          }' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
